@@ -1,8 +1,7 @@
-USE DataWarehouse;
 
-IF OBJECT_ID ('bronze.crm_cust_info', 'U') IS NOT NULL
-	DROP TABLE bronze.crm_cust_info;
-CREATE TABLE bronze.crm_cust_info(
+IF OBJECT_ID ('blayer.crm_cust_info', 'U') IS NOT NULL
+	DROP TABLE blayer.crm_cust_info;
+CREATE TABLE blayer.crm_cust_info(
 	cst_id INT,
 	cst_key NVARCHAR(50),
 	cst_firstname NVARCHAR(50),
@@ -12,9 +11,9 @@ CREATE TABLE bronze.crm_cust_info(
 	cst_create_date DATE
 );
 
-IF OBJECT_ID ('bronze.crm_prd_info', 'U') IS NOT NULL
-	DROP TABLE bronze.crm_prd_info;
-CREATE TABLE bronze.crm_prd_info(
+IF OBJECT_ID ('blayer.crm_prd_info', 'U') IS NOT NULL
+	DROP TABLE blayer.crm_prd_info;
+CREATE TABLE blayer.crm_prd_info(
 	prd_id INT,
 	prd_key NVARCHAR(50),
 	prd_nm NVARCHAR(50),
@@ -24,9 +23,9 @@ CREATE TABLE bronze.crm_prd_info(
 	prd_end_dt DATETIME
 );
 
-IF OBJECT_ID ('bronze.crm_sales_details', 'U') IS NOT NULL
-	DROP TABLE bronze.crm_sales_details;
-CREATE TABLE bronze.crm_sales_details(
+IF OBJECT_ID ('blayer.crm_sales_details', 'U') IS NOT NULL
+	DROP TABLE blayer.crm_sales_details;
+CREATE TABLE blayer.crm_sales_details(
 	sls_order_num NVARCHAR(50),
 	sls_product_key NVARCHAR(50),
 	sls_cust_id INT,
@@ -38,27 +37,27 @@ CREATE TABLE bronze.crm_sales_details(
 	sls_price INT
 );
 
-IF OBJECT_ID ('bronze.erp_loc_a101', 'U') IS NOT NULL
-	DROP TABLE bronze.erp_loc_a101;
+IF OBJECT_ID ('blayer.erp_loc_a101', 'U') IS NOT NULL
+	DROP TABLE blayer.erp_loc_a101;
 
-CREATE TABLE bronze.erp_loc_a101(
+CREATE TABLE blayer.erp_loc_a101(
 	cid NVARCHAR(50),
 	cntry NVARCHAR(50)
 );
 
-IF OBJECT_ID ('bronze.erp_cust_az12', 'U') IS NOT NULL
-	DROP TABLE bronze.erp_cust_az12;
+IF OBJECT_ID ('blayer.erp_cust_az12', 'U') IS NOT NULL
+	DROP TABLE blayer.erp_cust_az12;
 
-CREATE TABLE bronze.erp_cust_az12(
+CREATE TABLE blayer.erp_cust_az12(
 	cid NVARCHAR(50),
 	bdate DATE,
 	gen NVARCHAR(50)
 );
 
-IF OBJECT_ID ('bronze.erp_px_cat_g1v2', 'U') IS NOT NULL
-	DROP TABLE bronze.erp_px_cat_g1v2;
+IF OBJECT_ID ('blayer.erp_px_cat_g1v2', 'U') IS NOT NULL
+	DROP TABLE blayer.erp_px_cat_g1v2;
 
-CREATE TABLE bronze.erp_px_cat_g1v2(
+CREATE TABLE blayer.erp_px_cat_g1v2(
 	id NVARCHAR(50),
 	cat NVARCHAR(50),
 	subcat NVARCHAR(50),

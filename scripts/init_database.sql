@@ -1,21 +1,18 @@
 USE master;
 GO
-
-
-  IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse')
+  IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'Project1')
   BEGIN
-      Alter DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-      DROP DATABASE DataWarehouse;
+      Alter DATABASE Project1 SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+      DROP DATABASE Project1;
   END;
   GO
-    
-
-CREATE DATABASE DataWarehouse;
-USE DataWarehouse;
-
-CREATE SCHEMA bronze;
+CREATE DATABASE Project1;
 GO
-CREATE SCHEMA silver;
+USE Project1;
+
+CREATE SCHEMA blayer;
 GO
-CREATE SCHEMA gold;
+CREATE SCHEMA slayer;
+GO
+CREATE SCHEMA glayer;
 GO
